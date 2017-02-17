@@ -9,10 +9,6 @@ These materials however are subject to change, to make sure they stay up-to-date
 
 ## Getting Started
 
-TBC
-
-### Prerequisites
-
 Estimation of the random change point models is done using the Bayesian software [Stan](http://mc-stan.org). In order to use Stan from R, you will need to install RStan, which is the R iterface to Stan. The details for installing RStan can be found [here](https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started).
 
 ## Bug Reports
