@@ -3,7 +3,7 @@
 
 This repository contains the supplementary materials, including computing R code, for fitting the models described in the following paper:
 
-Brilleman SL, Howe L, Wolfe R, Tilling K. Bayesian piecewise linear mixed models with a random change point: an application to BMI rebound in childhood. *Epidemiology.* 2017 (to appear)
+    Brilleman SL, Howe L, Wolfe R, Tilling K. Bayesian piecewise linear mixed models with a random change point: an application to BMI rebound in childhood. *Epidemiology.* 2017 (to appear)
 
 These materials however are subject to change, to make sure they stay up-to-date and working with their dependencies, and hopefully also with some improvements to the code over time. The ultimate aim will be to develop an R package that will provide a general purpose user-friendly interface for fitting these random change point models. 
 
