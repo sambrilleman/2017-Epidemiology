@@ -16,13 +16,13 @@ data {
 
 parameters {
   vector[3] beta;            // fixed effects, intercept and slopes
-  real<lower=betakp_lower,upper=betakp_upper> betakp; 
-	                           // fixed effects, knotpoint (bounding specified to help convergence)
+  real<lower=betakp_lower,upper=betakp_upper> betakp;
+                             // fixed effects, knotpoint (bounding specified to help convergence)
   vector<lower=0>[4] u_sd;   // level 2 error sd (sds of the random effects u[j])
   real<lower=0> y_sd;        // level 1 error sd
   vector[4] u[Npat];         // random effects (level 2) errors
-  cholesky_factor_corr[4] L_u_Corr;         
-	                           // cholesky factor for the random effects correlation matrix
+  cholesky_factor_corr[4] L_u_Corr;
+                             // cholesky factor for the random effects correlation matrix
 }
 
 transformed parameters {  
@@ -59,8 +59,8 @@ model {
   beta[1] ~ normal(20, 20); // prior: fixed effect, intercept
   beta[2] ~ normal(0, 4);   // prior: fixed effect, slope before knot
   beta[3] ~ normal(0, 4);   // prior: fixed effect, slope after knot
-  betakp ~ uniform(betakp_lower,betakp_upper); 
-	                          // prior: fixed effect, knot point
+  betakp ~ uniform(betakp_lower,betakp_upper);
+                            // prior: fixed effect, knot point
 
   u_sd[1] ~ cauchy(0,5);    // prior: random effect sd, intercept
   u_sd[2] ~ cauchy(0,5);    // prior: random effect sd, slope before knot
@@ -80,8 +80,8 @@ model {
   // random effects distribution
   //=============================
   
-  for (i in 1:Npat) u[i] ~ multi_normal_cholesky(zeros4, diag_pre_multiply(u_sd, L_u_Corr));  
-	                           // NB. the second parameter here is the cholesky factor L 
+  for (i in 1:Npat) u[i] ~ multi_normal_cholesky(zeros4, diag_pre_multiply(u_sd, L_u_Corr));
+                             // NB. the second parameter here is the cholesky factor L 
                              // (for the correlation matrix). It only uses the sd rather 
                              // than the variances since Sigma = L*L'
   
@@ -99,9 +99,9 @@ generated quantities {
   corr_matrix[4] u_Corr;   // random effects correlation matrix
   matrix[4,4] u_Sigma;     // random effects covariance matrix
   vector[4] alpha_tosave[Npat_pred];
-	                         // monitor random effects for a subset of patients only 
-													 // (for plotting predictions) and do not monitor 'alpha' 
-													 // in the model above (since it consumes too much memory!)
+                           // monitor random effects for a subset of patients only
+                           // (for plotting predictions) and do not monitor 'alpha' 
+                           // in the model above (since it consumes too much memory!)
   
   //==================================================
   // predicted mean outcome using regression equation
