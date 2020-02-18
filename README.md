@@ -1,5 +1,4 @@
 # Supporting materials for published article
-[![License](https://img.shields.io/badge/License-GPL%20%28%3E=%203%29-brightgreen.svg)](http://www.gnu.org/licenses/gpl-3.0.html)
 
 This repository contains the supplementary materials, including computing R code, for fitting the models described in the following paper:
 
