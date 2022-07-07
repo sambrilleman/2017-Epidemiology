@@ -12,7 +12,7 @@ Estimation of the random change point models is done using the Bayesian software
 
 ## Bug Reports
 
-If you find any bugs, please report them via email to [Sam Brilleman](mailto:sam.brilleman@monash.edu).
+If you find any bugs, please report them via email to [Sam Brilleman](mailto:sbrilleman@seek.com.au).
 
 ## References
 
